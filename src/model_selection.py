@@ -6,6 +6,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import RandomizedSearchCV
 import yaml
+import os
 from logger import logging
 from feature_engineering import feature_engineering
 from data_preprocessing import data_preprocessing
@@ -55,6 +56,9 @@ def model_selection(X,y):
         })
 
     df1 = pd.DataFrame(scores, columns=['model', 'best_score', 'best_params'])
+    os.makedirs('Model score', exist_ok=True)
+    
+    df1.to_csv(os.path.join('D:\90 days DSA Goat\ML journey\Build-an-MLOps-pipeline-\Model score\model.csv' ))
     return df1
 
 print(load_params('D:\90 days DSA Goat\ML journey\Build-an-MLOps-pipeline-\params.yaml'))
