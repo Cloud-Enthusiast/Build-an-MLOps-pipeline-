@@ -6,3 +6,4 @@ kagglehub
 PyYAML
 dvc
 nltk
+logger

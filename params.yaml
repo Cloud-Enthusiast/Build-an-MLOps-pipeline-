@@ -1,0 +1,9 @@
+rfc:
+  n_estimators: [1,5,10]
+
+logreg:
+  C: [1,5,10]
+
+knn:
+  n_neighbors: [1,2,3,4,5]
+  p: [1,2,3]
